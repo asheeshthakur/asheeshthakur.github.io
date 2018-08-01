@@ -131,7 +131,7 @@ margin: 4px;
 .header {
     position: fixed;
     width: 100%;
-    background: #CC4646;
+    background: linear-gradient(#ff0000, black);
     z-index: 50;
     border-radius: 0;
     top: 0px;
@@ -502,6 +502,7 @@ background-color: #CC4646;
 }
 #timeline .timeline-badge span.timeline-balloon-date-day {
   font-size: 1.4em;
+  margin-top: 3px;
 }
 #timeline .timeline-badge span.timeline-balloon-date-month {
   font-size: 13px;
@@ -519,8 +520,8 @@ display: inherit;
 }
 #timeline .timeline-badge.timeline-filter-movement a span {
   color: #CC4646;
-  font-size: 1.3em;
-  top: -1px;
+  font-size: 1.4em;
+  top: 1px;
 }
 #timeline .timeline-badge.timeline-future-movement {
   background-color: #ffffff;
