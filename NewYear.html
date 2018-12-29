@@ -4,6 +4,23 @@
   <meta charset="utf-8">
   <title>Happy New Year</title>
   <style>
+      body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.bg {
+  /* The image used */
+  background-image: url(img/NewYear.gif);
+
+  /* Full height */
+  height: 100%; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
   div {
     color: white;
 	
@@ -13,13 +30,7 @@
     font-size:100px;
   }
   
-  html { 
-  background: url(img/NewYear.gif) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
+
 #name{
 
     margin-top:33%;
@@ -31,20 +42,22 @@ label{
   <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 </head>
 <body>
- 
+        <div class="bg">
+                <div id="results"></div>
+                <div class="genrate">
+                <div classs="form-group" id="name">
+                    <label>NAME:</label>
+                    <input type="text" class="form-control" placeholder="Enter your name" id="Name">
+                    <button type="button" class="btn btn-primary" onclick="myfunction()">Genrate</button>
+                
+                    <a id="ShareLink" href="https://wa.me/?text=Happy New Year">Share On Whatsapp</a>
+                   
+                 </div>    
+                </div>
+                </div> 
+        </div>
 
-<div id="results"></div>
-<div class="genrate">
-<div classs="form-group" id="name">
-    <label>NAME:</label>
-    <input type="text" class="form-control" placeholder="Enter your name" id="Name">
-    <button type="button" class="btn btn-primary" onclick="myfunction()">Genrate</button>
 
-    <a id="ShareLink" href="https://wa.me/?text=Happy New Year">Share On Whatsapp</a>
-   
- </div>    
-</div>
-</div> 
 <script>
     function myfunction(){      
         var Orgurl= window.location.pathname +"?n="+$("#Name").val();
