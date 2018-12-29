@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery.param demo</title>
+  <style>
+  div {
+    color: white;
+	font-size:100px;
+	text-align:center;
+  }
+  html { 
+  background: url(img/NewYear.gif) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+  </style>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+ 
+<footer>
+<div id="results"></div>
+</footer> 
+
+ 
+<script>
+
+
+var getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = window.location.search.substring(1),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+        }
+    }
+};
+var Name = getUrlParameter('n');
+$( "#results" ).text( Name );
+setInterval(
+
+    function () {
+	console.log(1);
+        $('#results').animate({rotate: '+=10deg'}, 0);
+    },
+    200
+);
+</script>
+ 
+</body>
+</html>
