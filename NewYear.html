@@ -38,17 +38,17 @@ label{
 <div classs="form-group" id="name">
     <label>NAME:</label>
     <input type="text" class="form-control" placeholder="Enter your name" id="Name">
-    <button type="button" class="btn btn-primary" onclick="myfunction()">Click</button>
+    <button type="button" class="btn btn-primary" onclick="myfunction()">Genrate</button>
 
-    
+    <a id="ShareLink" href="https://wa.me/?text=Happy New Year">Share On Whatsapp</a>
+   
  </div>    
 </div>
 </div> 
 <script>
     function myfunction(){      
         var Orgurl= window.location.pathname +"?n="+$("#Name").val();
-        
-           alert(Orgurl);
+       
            document.location.replace(Orgurl);
 
     }
@@ -71,14 +71,9 @@ var getUrlParameter = function getUrlParameter(sParam) {
 };
 var Name = getUrlParameter('n');
 $( "#results" ).text( Name );
-setInterval(
-
-    function () {
-	console.log(1);
-        $('#results').animate({rotate: '+=10deg'}, 0);
-    },
-    200
-);
+$( document ).ready(function() {
+    $("#ShareLink").attr("href","https://wa.me/?text="+window.location)
+});
 </script>
  
 </body>
