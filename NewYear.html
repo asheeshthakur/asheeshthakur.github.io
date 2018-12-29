@@ -2,13 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>jQuery.param demo</title>
+  <title>Happy New Year</title>
   <style>
   div {
     color: white;
-	font-size:100px;
+	
 	text-align:center;
   }
+  #results{
+    font-size:100px;
+  }
+  
   html { 
   background: url(img/NewYear.gif) no-repeat center center fixed; 
   -webkit-background-size: cover;
@@ -16,17 +20,39 @@
   -o-background-size: cover;
   background-size: cover;
 }
+#name{
+
+    margin-top:33%;
+}
+label{
+ color:aqua;
+}
   </style>
   <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 </head>
 <body>
  
-<footer>
-<div id="results"></div>
-</footer> 
 
- 
+<div id="results"></div>
+<div class="genrate">
+<div classs="form-group" id="name">
+    <label>NAME:</label>
+    <input type="text" class="form-control" placeholder="Enter your name" id="Name">
+    <button type="button" class="btn btn-primary" onclick="myfunction()">Click</button>
+
+    
+ </div>    
+</div>
+</div> 
 <script>
+    function myfunction(){      
+        var Orgurl=window.location.hostname + window.location.pathname +"?n="+$("#Name").val();
+        
+           alert(Orgurl);
+           document.location.replace(Orgurl);
+
+    }
+   
 
 
 var getUrlParameter = function getUrlParameter(sParam) {
